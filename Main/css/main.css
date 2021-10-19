@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+		*{
+			font-family: 'Noto Sans KR', sans-serif;
+			list-style: none;
+			text-decoration: none;
+			border-collapse: collapse;
+			margin: 0px;
+			padding: 0px;
+			color: #000;
+		}
+		h1{
+			font-size: 48px;
+			font-weight: 100;
+		}
+		
+		.contents1{
+			font-size: 20px;
+			font-weight: lighter
+		}
+		
+		.content1_bold{
+			font-size:18px;
+			font-weight: bold;
+		}
+		
+		.contents3{
+			font-size:14px;
+			font-weight: 100;
+		}
+		
+		.result{
+			font-size:24px;
+		}
+		
+		.intro_bg{
+			background-image: url("./img/main.jpg");
+			width:cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			height:500px;
+			
+		}
+		
+		.header{
+			display: flex;
+			width: 1280px;
+			margin:auto;
+			height: 86px;
+		}
+		
+		.searchArea{
+			width: 300px;
+			height: 40px;
+			background: rgba(0,0,0,0,5);
+			border-radius: 5px;
+			margin-top:24px;
+		}
+		
+		.searchArea > form > span{
+			width:50px;
+			color:black;
+			font-weight: bold;
+			cursor: pointer;
+			
+		}
+		
+		.searchArea > form > input{
+			border:1px;
+			width:250px;
+			height:40px;
+			background: rgba(0,0,0,0,0);
+			color:black;
+			padding-left:10px;
+		}
+		
+		.nav{
+			display: flex;
+			justify-content: flex-end;
+			line-height: 86px;
+			width: calc(1280-300px);
+		}
+		
+		.nav > li{
+			margin-left:65px;
+			
+		}
+		.nav > li > a{
+			color:black;
+			font-weight: bold;
+		}
+
+        .login{
+            padding: 30px;
+            position: absolute;
+            left: 90%;
+        }
+		
+		.login > a{
+		
+            font-weight: bold;
+		}
+		.intro_text{
+			width:100%;
+			margin:231px auto 231px auto;
+			text-align: center;
+		}
+				
+		.intro_text > h1,
+		.intro_text > h4{
+			color: #fff	
+		}
+		
+		.amount{
+			position: relative;
+			top: -66px;
+			display: flex;
+			width: 1280px;
+			background: white;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+			margin: auto;
+		}
+		
+		.amount > li{
+			flex: 1;
+			height: 132px;
+		}
+		
+		.amount >li > div{
+			text-align: center;
+			margin-top: 37px;
+			height: 57px;
+			
+		}
+		
+		.amount > li:not(:last-child)> div {
+			border-right: 1px solid E1E1E1;
+		}		
+		
+		/* main_text01*/
+		.main_text01{
+			width: 100%;
+			height: 601px;
+			margin-top:-132px;
+			background: #f1f2f3;
+		}
+		
+		.main_text01 > h1 {
+			padding-top: 116px;
+			text-align: center;
+		}
+		
+		.main_text01 > .contents1 {
+			text-align: center;
+		}
+		
+		.icons{
+			display: flex;
+			width: 1280px;
+			height: 302px;
+			margin:auto;
+		}
+		
+		.icons > li {
+			flex: 1;
+			width: 302px;
+			margin-top: 49px;
+			background: white;
+			text-align: center;
+		}
+		
+		.icons > li > .icon_img {
+			margin-top:18px;
+		}
+		
+		.icons > li:not(:last-child){
+			margin-right: 20px;
+		}
+		
+		.icons contents3 {
+			width: 190px;
+			margin: auto;
+			letter-spacing: -1px;
+		}
+		
+		.more{
+			width:100px;
+			height: 30px;
+			font-size: 13px;
+			background: #2F7AF4;
+			color: #fff;
+			margin:25px auto;
+			line-height: 30px;
+			
+		}
+		
+		/* main_text02 */
+		
+		.main_text02 {
+			width: 100%;
+			height: 659px;
+		}
+		
+		.main_text02 >h1{
+			padding-top: 50px;
+			text-align: center;
+		}
+		
+		.main_text02 > .contents1{
+			text-align: center;
+		}
+		
+		.service{
+			width: 1280px;
+			display: flex;
+			margin: 49px auto;
+			height: 427px;
+				
+		}
+
+		.service > .contents3{
+			padding: 20px;
+		}
+		
+		.service > .contents3>h2{
+			margin-bottom: 27px;
+		}
+		
+		
+		/* main_text3*/
+		
+		.main_text03 {
+		 width: 100%;
+		 height: 718px;
+		 background-image: url("./img/bg123.jpg");
+		}
+		
+		.main_text03 > ul{
+			display:flex;
+			padding-top: 138px;
+		}
+		
+		.main_text03 > ul >li {
+			flex: 1;
+			text-align: center;
+		}
+		
+		.main_text03 > ul > li > div > h1,
+		.main_text03 > ul > li > div{
+			color: black;
+		}
+		.main_text03 > li:not(:last-child)> div {
+			border-right: 1px solid E1E1E1;
+		}		
+		.more2{
+			width: 220px;
+			height: 40px;
+			border: 1px solid black;
+			cursor: pointer;
+			line-height: 40px;
+			margin: 16px auto;
+		}
+		
+		footer{
+			display: flex;
+			background: black;
+		}
+		
+		footer > div:first-child{
+			flex:3;
+			text-align: center;
+			color: #fff;
+		}
+	
+		footer > div:last-child{
+			flex:9;
+			color: #fff;
+		}
