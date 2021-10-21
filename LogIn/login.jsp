@@ -13,7 +13,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/login.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   
+   	<script src = "https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 </head>
 <body>
     <section class="login-form">
@@ -37,7 +38,8 @@
               		<input type="button" value="SIGN WITH EMAIL" id="email" onclick="location.href='controller.do?command=joinform'">
            		</div>
              	<div class="btn-area">
-            		<input type="button" value="SIGN WITH KAKAO" id="kakao">
+            		<input type="button" value="SIGN WITH KAKAO" id="kakao" onclick="loginWithKakao();">
+            		<p id="token-result"></p>
            		</div>
        		 </div>
            </form>
@@ -47,7 +49,40 @@
 
     </section>
 
-    <script>
+
+<script type="text/javascript">
+  function loginWithKakao() {
+	Kakao.init('735931396e4ab6619c456beb62b3d51b');
+	Kakao.isInitialized();
+	
+	console.log(Kakao.isInitialized());
+	
+    Kakao.Auth.authorize({
+      redirectUri: 'https://localhost:8990/controller.do?command=main'
+    })
+  }
+  // 아래는 데모를 위한 UI 코드입니다.
+  displayToken()
+  function displayToken() {
+    const token = getCookie('authorize-access-token')
+    if(token) {
+      Kakao.Auth.setAccessToken(token)
+      Kakao.Auth.getStatusInfo(({ status }) => {
+        if(status === 'connected') {
+          document.getElementById('token-result').innerText = 'login success. token: ' + Kakao.Auth.getAccessToken()
+
+      
+        } else {
+          Kakao.Auth.setAccessToken(null);
+        }
+      })
+    }
+
+    	
+  }
+
+  
+ 
       let id = $('#id'); 
       let pw = $('#pw');
       let btn = $('#btn');
