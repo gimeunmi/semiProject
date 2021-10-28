@@ -9,7 +9,7 @@ body{
   justify-content:center;
   align-items: center;
   height : 100vh;
-  background : url("bg.jpg");
+  background : url("img/bg.jpg");
   background-size : cover;
  
 }
@@ -25,7 +25,7 @@ body::before{
   z-index:2;
   background-color: rgb(199, 199, 199,0.4);
   border-radius: 60px;
-  height: 600px;
+  height: 650px;
 
 }
 
@@ -33,15 +33,17 @@ form{
   position: relative;
   left:13%;
   margin-top: 8%;
+
 }
 .login-form h1{
   font-size:32px; color:#fff;
   text-align: center;
-  padding: 10%;
+  padding: 15%;
 }
 .int-area{
   width:400px; position:relative;
   margin-top:20px;
+  
 }
 .int-area:first-child{margin-top:0;}
 .int-area input{

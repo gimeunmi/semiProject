@@ -9,6 +9,7 @@ public class loginDto {
 	private String myname;
 	private int mypostcode;
 	private String myaddr;
+	private String myadd_addr;
 	private String myphone;
 	private String myemail;
 	private String mygender;
@@ -19,8 +20,8 @@ public class loginDto {
 		super();
 	}
 
-	public loginDto(int myno, String myid, String mypw, String myname, int mypostcode, String myaddr, String myphone,
-			String myemail, String mygender, String myenabled, String myrole) {
+	public loginDto(int myno, String myid, String mypw, String myname, int mypostcode, String myaddr, String myadd_addr,
+			String myphone, String myemail, String mygender, String myenabled, String myrole) {
 		super();
 		this.myno = myno;
 		this.myid = myid;
@@ -28,6 +29,7 @@ public class loginDto {
 		this.myname = myname;
 		this.mypostcode = mypostcode;
 		this.myaddr = myaddr;
+		this.myadd_addr = myadd_addr;
 		this.myphone = myphone;
 		this.myemail = myemail;
 		this.mygender = mygender;
@@ -83,6 +85,14 @@ public class loginDto {
 		this.myaddr = myaddr;
 	}
 
+	public String getMyadd_addr() {
+		return myadd_addr;
+	}
+
+	public void setMyadd_addr(String myadd_addr) {
+		this.myadd_addr = myadd_addr;
+	}
+
 	public String getMyphone() {
 		return myphone;
 	}
@@ -123,10 +133,7 @@ public class loginDto {
 		this.myrole = myrole;
 	}
 
-	
-	
-	
-	
+
 	
 	
 }

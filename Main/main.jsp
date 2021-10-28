@@ -1,17 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ page import="com.prj.dao.loginDao" %>
+<%@ page import="com.prj.dto.loginDto" %>    
+
+<% request.setCharacterEncoding("UTF-8"); %>
+<% response.setContentType("text/html;charset=UTF-8"); %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+
 <body>
+
 	<div>
 		<div class="wrap">
 			<div class="intro_bg">
@@ -31,7 +40,22 @@
 						<li><a href="#">쇼핑 플랫폼</a></li>
 					</ul>
 					<div class="login">
+						<%
+						if(session.getAttribute("dto")==null){
+						%>
 						<a href="controller.do?command=loginform">LOGIN</a>
+						<%
+						}else{
+							out.print(session.getAttribute("dto.myname")+"님 환영합니다");
+					
+						%>
+						
+						<a href="controller.do?command=logout">LOGOUT</a>
+						
+						<% 
+						}
+						%>
+
 					</div>
 				</div>
 					
