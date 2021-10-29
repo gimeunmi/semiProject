@@ -91,13 +91,15 @@
 		}
 
         .login{
-            padding: 30px;
-            position: absolute;
-            left: 90%;
+       		 display: block;
+       		 position:relative;
+       		 left:8%;
+       		 top:40%;
+           
         }
 		
 		.login > a{
-		
+			
             font-weight: bold;
 		}
 		.intro_text{

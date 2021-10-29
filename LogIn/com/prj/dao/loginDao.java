@@ -171,11 +171,14 @@ import common.JDBCTemplate;
 					res.setMyid(rs.getString(2));
 					res.setMypw(rs.getString(3));
 					res.setMyname(rs.getString(4));
-					res.setMyaddr(rs.getString(5));
-					res.setMyphone(rs.getString(6));
-					res.setMyemail(rs.getString(7));
-					res.setMyenabled(rs.getString(8));
-					res.setMyrole(rs.getString(9));
+					res.setMypostcode(rs.getInt(5));
+					res.setMyaddr(rs.getString(6));
+					res.setMyadd_addr(rs.getString(7));
+					res.setMyphone(rs.getString(8));
+					res.setMyemail(rs.getString(9));
+					res.setMygender(rs.getString(10));
+					res.setMyenabled(rs.getString(11));
+					res.setMyrole(rs.getString(12));
 				}
 			} catch (SQLException e) {
 				System.out.println("3/4단계 오류");

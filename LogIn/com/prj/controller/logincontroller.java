@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.taglibs.standard.tag.common.fmt.RequestEncodingSupport;
-
 import com.prj.dao.loginDao;
 import com.prj.dto.loginDto;
 
@@ -29,45 +27,49 @@ public class logincontroller extends HttpServlet {
 		
 		loginDao dao = new loginDao();
 		
-		if(command.equals("login")) {
+		if(command.equals("loginform")) {
+			response.sendRedirect("login.jsp");
+
+		}else if(command.equals("main")) {
+			response.sendRedirect("main.jsp");
+		}
+		
+		else if(command.equals("login")) {
 			String id = request.getParameter("id");
 			String pw = request.getParameter("pw");
 			
-			loginDto dto = dao.login(id,pw);
-			System.out.println(dto.getMyid());
-			if(dto.getMyid()!=null){
-				HttpSession session =request.getSession();
-				session.setAttribute("dto",dto);
-				System.out.println("login");
-				RequestDispatcher disp = request.getRequestDispatcher("adminmain.jsp");
-				disp.forward(request,response);
+			HttpSession session =request.getSession();
 			
-		
-				
-				if(dto.getMyrole().equals("ADMIN")){
-					System.out.println("admin login");
-					
-				
-				}else if(dto.getMyrole().equals("USER")){
-					response.sendRedirect("usermsain.jsp");
-				}else if(dto.getMyrole().equals("MANAGER")){
-					response.sendRedirect("usermain.jsp");
-				}
+			loginDto dto = dao.login(id,pw);
+			
+			if(dto.getMyid()!=null){
+				System.out.println("login");
+				session.setAttribute("dto",dto);
+				RequestDispatcher disp = request.getRequestDispatcher("main.jsp");
+				disp.forward(request,response);
+
 			}else {
 				
-				jsResponse("로그인 실패","controller.do?command=list",response);
+				jsResponse("로그인 실패","controller.do?command=loginform",response);
 			}
 			
 		}else if(command.equals("joinform")) {
 			response.sendRedirect("join.jsp");
-		}else if(command.equals("join")) {
+		}else if(command.equals("kakao")) {
+			String email= request.getParameter("email");
+			String gender = request.getParameter("gender");
+			String type = "kakao";
 			
+			//db에 담아서 저장 , session에 담아 main으로 전송해야함
+		}else if(command.equals("logout")) {
+			HttpSession session =request.getSession();
+			
+			session.invalidate();
+			response.sendRedirect("main.jsp");
 		}
-			
 	
 	}
 	
-
 
 
 
@@ -82,13 +84,12 @@ public class logincontroller extends HttpServlet {
 				"location.href='"+url+"';"+
 				"</script>";
 			PrintWriter out = response.getWriter();
-			out.print(s);
+		out.print(s);
 				
 		
 	}
 	
-	protected void service(HttpServletRequest request,  HttpServletResponse response) throws ServletException,  IOException {
-	    HttpSession session = request.getSession();
-	}
+
+	
 
 }
