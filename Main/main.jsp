@@ -101,7 +101,7 @@
 				<ul class="icons">
 					<li>
 						<div class="icon_img">
-							<img src="./img/icon3.svg">
+							<img src="./main_img/icon3.svg">
 						</div>
 						<div class="content1_bold">TEST1</div>
 						<div class="contents3">
@@ -113,7 +113,7 @@
 					</li>
 					<li>
 						<div class="icon_img">
-							<img src="./img/icon1.svg">
+							<img src="./main_img/icon1.svg">
 						</div>
 						<div class="content1_bold">TEST2</div>
 						<div class="contents3">
@@ -125,7 +125,7 @@
 					</li>
 					<li>
 						<div class="icon_img">
-							<img src="./img/icon2.svg">
+							<img src="./main_img/icon2.svg">
 						</div>
 						<div class="content1_bold">TEST3</div>
 						<div class="contents3">
@@ -144,7 +144,7 @@
 				<div class="contents1">TEST 내용 삽입</div>
 				<div class="service">
 					<div class="animal_photo">
-						<img src="./img/animal.jpg">
+						<img src="./main_img/animal.jpg">
 					</div>
 					
 					<div class="contents3">
